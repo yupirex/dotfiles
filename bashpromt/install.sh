@@ -6,4 +6,4 @@ echo "Write new version -> ~/.bashpromt"
     (echo "source ~/.bashpromt" >> ~/.bashrc && 
     echo "Line added" &&
     $0)
-    
+echo "Completed!"

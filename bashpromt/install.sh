@@ -4,5 +4,5 @@ grep ".bashpromt" ~/.bashrc &&
     echo "line exist" || 
     echo "source ~/.bashpromt" >> ~/.bashrc && 
     echo "line added"
-echo "\nRun: . ~/.bashrc"
+echo "Run: . ~/.bashrc"
     

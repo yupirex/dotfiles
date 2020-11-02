@@ -4,7 +4,7 @@ wget -qO ~/.bashpromt https://raw.githubusercontent.com/yupirex/dotfiles/master/
 
 (grep ".bashpromt" ~/.bashrc &>/dev/null &&
     echo "\"source ~/.bashpromt\" already added in ~/.bashrc" )|| 
-    (echo "source ~/.bashpromt" >> ~/.bashrc && 
+    (echo "source ~/.bashpromt >> ~/.bashrc" >> ~/.bashrc && 
     echo "Line added")
     
 echo "Completed!"

@@ -3,6 +3,5 @@ echo "Write https://raw.githubusercontent.com/yupirex/dotfiles/master/bashpromt/
 wget -qO ~/.bashpromt https://raw.githubusercontent.com/yupirex/dotfiles/master/bashpromt/.bashpromt
 
 grep ".bashpromt" "$HOME"/.bashrc &>/dev/null && echo ".bashpromt already added in ~/.bashrc" || { echo "source ~/.bashpromt" >> ~/.bashrc; echo "Line added: echo source ~/.bashpromt >> ~/.bashrc"; }
-.bashpromt already added in ~/.bashrc
     
 echo "Completed!"

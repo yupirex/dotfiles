@@ -1,8 +1,9 @@
 #!/usr/share/env bash
 cp .bashpromt ~/
+echo "Write new version -> ~/.bashpromt"
 (grep ".bashpromt" ~/.bashrc &>/dev/null &&
-    echo line exist )|| 
+    echo "Already added in ~/.bashpromt" )|| 
     (echo "source ~/.bashpromt" >> ~/.bashrc && 
-    echo line added &&
+    echo "Line added" &&
     $0)
     

@@ -1,8 +1,8 @@
 #!/usr/share/env bash
 cp .bashpromt ~/
-grep ".bashpromt" ~/.bashrc &&
-    echo "line exist" || 
-    echo "source ~/.bashpromt" >> ~/.bashrc && 
-    echo "line added"
-echo "Run: . ~/.bashrc"
+(grep ".bashpromt" ~/.bashrc &>/dev/null &&
+    echo line exist )|| 
+    (echo "source ~/.bashpromt" >> ~/.bashrc && 
+    echo line added &&
+    $0)
     

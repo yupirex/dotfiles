@@ -4,7 +4,7 @@
 #apt build-dep vim
 apt install -y \
     ncurses-dev build-essential mercurial python3-dev shellcheck cmake golang-any git curl wget
-    
+# pip install yamllint    
 cd /tmp
 wget  https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tar.xz  
 sudo apt update

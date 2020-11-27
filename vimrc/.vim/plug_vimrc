@@ -104,7 +104,7 @@ let g:ale_fix_on_save = 1
 "
 "cd ~/.vim/bundle/YouCompleteMe
 "python install.py --all
-let g:ycm_show_diagnostics_ui = 0 "Обрубаем YCM
+"""let g:ycm_show_diagnostics_ui = 0 "Обрубаем YCM
 
 "set completeopt=menu,menuone
 "let g:ycm_add_preview_to_completeopt = 0

@@ -8,7 +8,7 @@ Plug 'kien/rainbow_parentheses.vim' "Разноцветные скобки
 Plug 'jiangmiao/auto-pairs'     "Автозакрытие скобок
 Plug 'dense-analysis/ale'
 "Plug 'neomake/neomake'          "Для работы шел чека
-Plug 'Valloric/YouCompleteMe'   "Подстановка команд/переменых
+"Plug 'Valloric/YouCompleteMe'   "Подстановка команд/переменых
 Plug 'preservim/nerdtree'       "Файловый менеджер
 
 call plug#end()

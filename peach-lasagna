@@ -1,0 +1,180 @@
+----init.vim 
+
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+
+source ~/.vimrc
+runtime ./key.vim
+runtime ./theme.vim
+
+set clipboard=unnamedplus
+set nocompatible              " be iMproved, required
+filetype plugin indent on    " required
+
+call plug#begin()
+    Plug 'tpope/vim-fugitive'
+    Plug 'git://git.wincent.com/command-t.git'
+    Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+    Plug 'tpope/vim-surround'
+
+    "Plug 'morhetz/gruvbox'
+    Plug 'joshdick/onedark.vim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'ryanoasis/vim-devicons'
+
+    Plug 'terryma/vim-multiple-cursors'
+
+    Plug 'airblade/vim-gitgutter'
+    Plug 'preservim/nerdtree'
+    Plug 'jistr/vim-nerdtree-tabs'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'vim-syntastic/syntastic'
+    Plug 'majutsushi/tagbar'
+    Plug 'vim-scripts/indentpython.vim'
+    "Plug 'lepture/vim-jinja'
+    "Plug 'pangloss/vim-javascript'
+    Plug 'alvan/vim-closetag'
+
+    Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+    Plug 'jiangmiao/auto-pairs'
+
+    Plug 'junegunn/goyo.vim'
+    Plug 'vim-syntastic/syntastic'
+    "Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'sheerun/vim-polyglot'
+
+    Plug 'python-mode/python-mode', { 'for': 'python', 'branch':'develop'  }
+    Plug 'itchyny/vim-cursorword'
+    Plug 'nvie/vim-flake8'
+    
+call plug#end()
+" :PlugList       - lists configured plugins
+" :PlugInstall    - installs plugins; append `!` to update or just
+" :PlugUpdate
+" :PlugSearch foo - searches for foo; append `!` to refresh local cache
+" :PlugClean      - confirms removal of unused plugins; append `!` to
+set shell=zsh
+
+let g:indent_guides_enable_on_vim_startup = 1
+
+set background=dark
+set listchars=trail:·,tab:->,nbsp:·,space:·
+set list
+
+set cursorline
+
+"let g:gruvbox_contrast_dark='hard'
+" Настройки табов для Python, согласно рекоммендациям
+set tabstop=2
+set shiftwidth=2
+set smarttab
+set expandtab "ставим табы пробелами
+set softtabstop=2 "4 пробела в табе
+
+set autoindent
+" " Подсвечиваем все что можно подсвечивать
+let python_highlight_all = 1
+
+"NERD
+let g:NERDTreeIgnore = [
+  \ "node_modules",
+  \ "__pycache__",
+  \ ".venv"
+  \ ]
+
+
+let g:onedark_terminal_italics=1
+
+" airline 
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols_branch = ''
+let g:airline_symbols_readonly = ''
+let g:airline_symbols_linenr = '☰'
+let g:airline_symbols_maxlinenr = ''
+let g:airline_symbols_dirty='⚡'
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='onedark'
+
+let g:airline_powerline_fonts = 1
+let g:airline_highlighting_cache = 1
+
+let g:airline_extensions = ['tabline', 'coc']
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+
+" Cock
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ 'coc-git',
+  \ 'coc-bookmark',
+  \ 'coc-explorer',
+  \ 'coc-sql',
+  \ 'coc-tabnine',
+  \ 'coc-python',
+  \ 'coc-eslint', 'coc-tsserver'
+  \ ]
+
+"synta
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+set nu "Включаем нумерацию строк
+set mousehide "Спрятать курсор мыши когда набираем текст
+set mouse=a "Включить поддержку мыши
+set termencoding=utf-8 "Кодировка терминала
+set novisualbell "Не мигать
+set t_vb= "Не пищать!
+" Удобное поведение backspace
+set backspace=indent,eol,start whichwrap+=<,>,[,]
+" Вырубаем черточки на табах
+set showtabline=1
+
+" Переносим на другую строчку, разрываем строки
+set wrap
+set linebreak
+
+set encoding=utf-8 " Кодировка файлов по умолчанию
+set fileencodings=utf8
+
+set ruler
+
+set hidden
+
+" Выключаем звук в Vim
+set visualbell t_vb=
+"set guifont=JetBrains-Mono:h16
+
+" Перед сохранением вырезаем пробелы на концах (только в .py файлах)
+autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
+" В .py файлах включаем умные отступы после ключевых слов
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+
+
+autocmd FileType python runtime ./python.vim
+
+set t_Co=256
+colorscheme onedark
+
+----python.vim 
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4 "4 пробела в табе
+
+set colorcolumn=100

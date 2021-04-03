@@ -5,6 +5,8 @@ alias ghm="git commit -m $(date +'%F_%T')"
 #alias ll='ls -l'
 #alias la='ls -A'
 #alias l='ls -CF'
+alias ping='ping -c 2'
+# for true ping use \ping
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

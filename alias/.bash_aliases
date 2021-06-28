@@ -24,6 +24,7 @@ fi
 #Function
 cdl(){ cd $1; ls -a;}
 mkcd(){ mkdir $1; cd $1; ls -a;}
+apt-search(){  apt search $1 | grep --color $1;}
 
 #tmux
 select-term(){

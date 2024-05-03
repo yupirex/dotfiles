@@ -1,7 +1,8 @@
 #Aliases
 alias ghm="git commit -m $(date +'%F_%T')"
+alias tb="nc termbin.com 9999"
 
- some more ls aliases
+# some more ls aliases
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'

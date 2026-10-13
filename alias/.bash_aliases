@@ -6,7 +6,7 @@ alias tb="nc termbin.com 9999"
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-alias ping='ping -c 2'
+alias ping='ping2 -c 2'
 # for true ping use \ping
 
 # enable color support of ls and also add handy aliases

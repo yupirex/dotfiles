@@ -1,2 +1,0 @@
-branch-clean = !git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d
-save = !git add -A && git commit -m 'SAVEPOINT'
